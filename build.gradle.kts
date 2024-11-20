@@ -27,19 +27,33 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("com.slack.api:slack-api-client:1.40.2")
-    implementation("com.mysql:mysql-connector-j")
+
+    // slack
+    implementation("com.google.code.gson:gson:2.8.6")
+    implementation("com.squareup.okhttp3:okhttp:4.2.0")
+    implementation("com.slack.api:slack-app-backend:1.6.2")
+    implementation("com.slack.api:slack-api-model:1.6.2")
+    implementation("com.slack.api:slack-api-client:1.6.2")
+
+    // feign client
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
+    implementation("io.github.openfeign:feign-httpclient:11.0")
 
     compileOnly("org.projectlombok:lombok")
-
     runtimeOnly("com.h2database:h2")
-    runtimeOnly("mysql:mysql-connector-java")
 
     annotationProcessor("org.projectlombok:lombok")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
+
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR9")
+    }
+}
+
 
 kotlin {
     compilerOptions {
