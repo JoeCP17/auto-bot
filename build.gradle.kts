@@ -29,15 +29,10 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
 
     // slack
-    implementation("com.google.code.gson:gson:2.8.6")
-    implementation("com.squareup.okhttp3:okhttp:4.2.0")
-    implementation("com.slack.api:slack-app-backend:1.6.2")
-    implementation("com.slack.api:slack-api-model:1.6.2")
-    implementation("com.slack.api:slack-api-client:1.6.2")
+    implementation("com.slack.api:slack-api-client:1.40.2")
 
     // feign client
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
-    implementation("io.github.openfeign:feign-httpclient:11.0")
 
     compileOnly("org.projectlombok:lombok")
     runtimeOnly("com.h2database:h2")
@@ -50,10 +45,9 @@ dependencies {
 
 dependencyManagement {
     imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR9")
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:2023.0.3")
     }
 }
-
 
 kotlin {
     compilerOptions {
