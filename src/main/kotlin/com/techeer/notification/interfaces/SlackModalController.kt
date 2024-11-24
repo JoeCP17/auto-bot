@@ -36,4 +36,14 @@ class SlackModalController(
             )
         )
     }
+
+
+    /**
+     * 슬랙 내, Modal에서 제출을 누를 경우 Modal 내 입력받은 데이터를 기반으로 처리를 진행한다.
+     * @see <a href="https://api.slack.com/interactivity"> Slack Interactivity Docs</a>
+     */
+    @PostMapping("/submit")
+    fun submitModal(@RequestBody submitModalRequestData: MultiValueMap<String, Any>) {
+        println(submitModalRequestData)
+    }
 }

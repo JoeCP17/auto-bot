@@ -21,14 +21,21 @@ class SlackModalService(
     override fun openModalView(
         modalView: ModalView
     ) {
-        val slackScheduleModalTemplate = SlackModalHelper.slackScheduleModalTemplate()
+        val slackScheduleModalTemplate = SlackModalHelper.findModalTemplate(
+            modalView.modalType
+        )
 
         val viewsOpenRequest = ViewsOpenRequest.builder()
             .triggerId(modalView.triggerId)
             .view(slackScheduleModalTemplate)
             .build()
 
-        methodsClient.viewsOpen(viewsOpenRequest)
+        val viewsOpenResponse = methodsClient.viewsOpen(viewsOpenRequest)
+
+        if (!viewsOpenResponse.isOk) {
+            throw IllegalStateException("Slack Modal Open Failed. ${viewsOpenResponse.error}")
+        }
+
     }
 
 }
