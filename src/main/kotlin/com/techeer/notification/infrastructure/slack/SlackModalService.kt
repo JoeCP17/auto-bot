@@ -8,10 +8,7 @@ import org.springframework.stereotype.Service
 
 
 /**
- * Slack ViewsOpen
  * @see <a href="https://api.slack.com/methods/views.open"> views.open API </a>
- * @see <a href="https://api.slack.com/interactivity/slash-commands#creating_commands"> Slack Slash Command </a>
- *
  */
 @Service
 class SlackModalService(
@@ -35,7 +32,5 @@ class SlackModalService(
         if (!viewsOpenResponse.isOk) {
             throw IllegalStateException("Slack Modal Open Failed. ${viewsOpenResponse.error}")
         }
-
     }
-
 }
