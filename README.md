@@ -1,4 +1,4 @@
-# Smart- Bot 
+# Auto- Bot 
 
 # 취지 
 - Slack, Discord와 같은 플랫폼에서 사용할 수 있는 챗봇을 만들자. 
