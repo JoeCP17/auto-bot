@@ -1,5 +1,5 @@
 slack:
   notification:
-    bot-token:
+    bot-token: ${BOT_TOKEN}
   signing:
-    secret:
+    secret: ${SLACK_SIGNING_SECRET}
