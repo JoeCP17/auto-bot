@@ -40,3 +40,5 @@ out/
 generated/
 
 application-dev.yml
+
+.env
